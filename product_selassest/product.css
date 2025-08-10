@@ -1,0 +1,378 @@
+
+    :root {
+      --pink: hsl(0, 100%, 70%);
+      --white: #fff;
+      --gray: #f2f2f2;
+      --text-dark: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--gray);
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .product-page {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .product-images {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-images img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .thumbnail-slider {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .thumbnail-slider img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .thumbnail-slider img.active {
+      border-color: var(--pink);
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-info {
+      margin-bottom: 1.5rem;
+    }
+
+    .product-info h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      color: var(--pink);
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .sizes {
+      margin-bottom: 1.5rem;
+    }
+
+    .sizes h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .size-options {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .size-box {
+      border: 2px solid var(--pink);
+      padding: 0.6rem 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .size-box.selected {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .buttons button {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .add-to-cart {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .add-to-cart:hover {
+      background: hsl(0, 100%, 60%);
+    }
+
+    .buy-now {
+      background: var(--white);
+      color: var(--pink);
+      border: 2px solid var(--pink);
+    }
+
+    .buy-now:hover {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .similar-products {
+      margin-top: 3rem;
+    }
+
+    .similar-products h2 {
+      margin-bottom: 1rem;
+      color: var(--pink);
+    }
+
+    .similar-list {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-color: var(--pink) var(--gray);
+      scrollbar-width: thin;
+    }
+
+    .similar-list::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .similar-list::-webkit-scrollbar-track {
+      background: var(--gray);
+      border-radius: 10px;
+    }
+
+    .similar-list::-webkit-scrollbar-thumb {
+      background-color: var(--pink);
+      border-radius: 10px;
+    }
+
+    .similar-card {
+      flex: 0 0 180px;
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .similar-card img {
+      width: 100%;
+      border-radius: 0.75rem;
+      margin-bottom: 0.5rem;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .similar-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--pink);
+      color: white;
+      border-radius: 1rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .product-page {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 1024px) {
+  .product-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .product-images,
+  .product-details {
+    width: 100%;
+  }
+
+  .product-images img {
+    height: 350px;
+  }
+
+  .thumbnail-slider {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .thumbnail-slider::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .thumbnail-slider img {
+    flex: 0 0 auto;
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .buttons button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .similar-list {
+    gap: 1rem;
+  }
+
+  .similar-card {
+    flex: 0 0 140px;
+    padding: 0.75rem;
+  }
+
+  .similar-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .size-options {
+    gap: 0.5rem;
+  }
+
+  .size-box {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+
+  .similar-card {
+    flex: 0 0 120px;
+  }
+
+  .similar-card img {
+    height: 100px;
+  }
+
+  .product-info h1 {
+    font-size: 1.25rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+}
+.thumbnail-slider {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  touch-action: pan-x;
+}
+
+.thumbnail-slider img {
+  flex: 0 0 auto;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.thumbnail-slider img.active {
+  border-color: var(--pink);
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar */
+.thumbnail-slider::-webkit-scrollbar {
+  height: 6px;
+}
+.thumbnail-slider::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 10px;
+}
+.thumbnail-slider::-webkit-scrollbar-track {
+  background: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-images img {
+    height: 280px;
+  }
+
+  .thumbnail-slider img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-images img {
+    height: 240px;
+  }
+
+  .thumbnail-slider img {
+    width: 38px;
+    height: 38px;
+  }
+}
